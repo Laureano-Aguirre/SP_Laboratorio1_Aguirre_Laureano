@@ -1,0 +1,7 @@
+int controller_loadFromText(char* path , LinkedList* pArrayListEmployee);
+int controller_ListLibro(LinkedList* pArrayListEmployee);
+int controller_sortLibro(LinkedList* pArrayListEmployee);
+void mostrarLibro(LinkedList* pArrayListEmployee, int index);
+int OrdenamientoPorNombre(void* empleadoA, void* empleadoB); //ok
+int OrdenamientoPorHsTrabajadas(void* empleadoA, void* empleadoB); //ok
+int OrdenamientoPorSueldo(void* empleadoA, void* empleadoB);	//ok

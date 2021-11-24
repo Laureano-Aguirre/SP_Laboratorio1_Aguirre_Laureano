@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "Libros.h"
+
+eLibro* libro_new()
+{
+	eLibro* nuevoLibro;
+	nuevoLibro=(eLibro*) malloc(sizeof(eLibro));
+
+	if(nuevoLibro!=NULL)
+	{
+		nuevoLibro->id=0;
+		strcpy(nuevoLibro->autor, " ");
+		strcpy(nuevoLibro->titulo, " ");
+		nuevoLibro->precio=0;
+		nuevoLibro->editorialId=0;
+	}
+
+	return nuevoLibro;
+}
+
+eLibro* libros_newParametrosString(char* idStr,char* autorStr,char* tituloStr,char* editorialIDStr, char* precioStr)
+{
+	eLibro* nuevoLibro=libro_new();
+
+
+	if(nuevoLibro!=NULL)
+	{
+		if(libro_setId(nuevoLibro, atoi(idStr))==-1 ||
+			libro_setAutor(nuevoLibro, autorStr)==-1 ||
+			libro_setTitulo(nuevoLibro, atoi(tituloStr))==-1 ||
+			libro_setPrecio(nuevoLibro, atoi(precioStr))==-1 ||
+			libr0_setEditorialId(nuevoLibro, atoi(editorialIDStr)))
+		{
+			free(nuevoLibro);
+			nuevoLibro=NULL;
+		}
+	}
+	return nuevoLibro;
+}
+
+eLibro* employee_newParametros(int idStr,char* autorStr,char* editorial, int precioStr, int editorialIDStr)
+{
+	eLibro* nuevoLibro=NULL;
+	nuevoLibro=(eLibro*)malloc(sizeof(eLibro));
+
+	if(nuevoLibro!=NULL)
+	{
+		nuevoLibro->id=idStr;
+		strcpy(nuevoLibro->autor, autorStr);
+		strcpy(nuevoLibro->titulo);
+		nuevoLibro->precio=precioStr;
+		nuevoLibro->editorialId=editorialIDStr;
+	}
+
+	return nuevoLib;
+}

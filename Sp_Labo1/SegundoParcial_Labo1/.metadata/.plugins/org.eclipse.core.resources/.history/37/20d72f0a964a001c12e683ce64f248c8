@@ -1,0 +1,22 @@
+/*
+ * Libros.h
+ *
+ *  Created on: 20 nov. 2021
+ *      Author: Lau
+ */
+
+#ifndef LIBROS_H_
+#define LIBROS_H_
+typedef struct{
+	int id;
+	char titulo [50];
+	char autor [50];
+	int precio;
+	int editorialId;
+}eLibro;
+
+eLibro* libro_new(); //ok
+eLibro* libro_newParametrosString(char* idStr,char* autorStr,char* tituloStr,char* editorialIDStr, char* precioStr); //ok
+eLibro* libro_newParametros(int idStr,char* autorStr,char* editorial, int precioStr, int editorialIDStr);
+
+#endif /* LIBROS_H_ */

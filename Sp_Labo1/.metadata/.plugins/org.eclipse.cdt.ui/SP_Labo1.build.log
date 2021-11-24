@@ -1,0 +1,6 @@
+12:01:50 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+
+12:01:50 Build Finished. 0 errors, 0 warnings. (took 215ms)
+

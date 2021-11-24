@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
+#include "Libros.h"
+#include "parser.h"
+
+
+int parser_LibroFromText(FILE* pFile , LinkedList* pArrayListLibro)
+{
+	int retorno=0;
+	int cantidad;
+	char buffer1[1024];
+	char buffer2[1024];
+	char buffer3[1024];
+	char buffer4[1024];
+	char buffer5[1024];
+	eLibro* nuevoLibro;
+
+	if(pFile!=NULL && pArrayListLibro!=NULL)
+	{
+		fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^\n]\n", buffer1, buffer2, buffer3, buffer4, buffer5); //lectura fantasma
+		//printf("\n%s    %s    %s    %s",buffer1, buffer2, buffer3, buffer4); verificar que datos estoy poniendo
+
+		while(!feof(pFile))//hasta q no lea la ultima linea, no sale del while
+		{
+			cantidad= fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^\n]\n", buffer1, buffer2, buffer3, buffer4, buffer5);
+			if(cantidad<5)
+			{
+				break;
+			}
+			nuevoLibro=libro_newParametrosString(buffer1, buffer2, buffer3, buffer4, buffer5);
+			printf("\n %d    %s   %s   %d   %s");
+			ll_add(pArrayListLibro, nuevoLibro);
+			retorno=1;
+		}
+	}
+	return retorno;
+}
+

@@ -1,0 +1,234 @@
+22:06:18 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+In file included from ..\Controller.h:3:0,
+                 from ..\Controller.c:4:
+..\Libros.h: In function 'll_map':
+..\Libros.h:17:2: error: storage class specified for parameter 'eLibro'
+ }eLibro;
+  ^~~~~~
+..\Libros.h:20:1: error: expected declaration specifiers before 'eLibro'
+ eLibro* libro_new(); //ok
+ ^~~~~~
+..\Libros.h:21:1: error: expected declaration specifiers before 'eLibro'
+ eLibro* libro_newParametrosString(char* idStr,char* autorStr,char* tituloStr,char* editorialIDStr, char* precioStr); //ok
+ ^~~~~~
+..\Libros.h:25:17: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_setId(eLibro* this, int id);
+                 ^~~~~~
+..\Libros.h:26:20: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_setAutor(eLibro* this, char* autor);
+                    ^~~~~~
+..\Libros.h:27:21: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_setTitulo(eLibro* this, char* titulo);
+                     ^~~~~~
+..\Libros.h:28:21: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_setPrecio(eLibro* this, int precio);
+                     ^~~~~~
+..\Libros.h:29:26: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_setEditorialId(eLibro* this, char* editorialId);
+                          ^~~~~~
+..\Libros.h:31:17: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_getId(eLibro* this, int* id);
+                 ^~~~~~
+..\Libros.h:32:20: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_getAutor(eLibro* this, char* autor);
+                    ^~~~~~
+..\Libros.h:33:21: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_getTitulo(eLibro* this, char* titulo);
+                     ^~~~~~
+..\Libros.h:34:21: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_getPrecio(eLibro* this, int* precio);
+                     ^~~~~~
+..\Libros.h:35:26: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_getEditorialId(eLibro* this, char* editorialId);
+                          ^~~~~~
+In file included from ..\Controller.c:4:0:
+..\Controller.h:6:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'int'
+ int controller_loadFromText(char* path , LinkedList* pArrayListLibro);
+ ^~~
+..\Controller.c:8:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+..\Controller.c:31:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+..\Controller.c:53:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+..\Controller.c:78:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+..\Controller.c:112:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+..\Controller.c:132:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+..\Controller.c:141:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+In file included from ..\parser.h:10:0,
+                 from ..\Controller.h:2,
+                 from ..\Controller.c:4:
+..\LinkedList.h:56:13: error: old-style parameter declarations in prototyped function definition
+ LinkedList* ll_map(LinkedList* this, void (*pFunc)(void* pElement))
+             ^~~~~~
+..\Controller.c:171:1: error: expected '{' at end of input
+ }
+ ^
+..\Controller.c:171:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+22:09:04 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+In file included from ..\parser.c:4:0:
+..\Libros.h: In function 'll_map':
+..\Libros.h:17:2: error: storage class specified for parameter 'eLibro'
+ }eLibro;
+  ^~~~~~
+..\Libros.h:20:1: error: expected declaration specifiers before 'eLibro'
+ eLibro* libro_new(); //ok
+ ^~~~~~
+..\Libros.h:21:1: error: expected declaration specifiers before 'eLibro'
+ eLibro* libro_newParametrosString(char* idStr,char* autorStr,char* tituloStr,char* editorialIDStr, char* precioStr); //ok
+ ^~~~~~
+..\Libros.h:25:17: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_setId(eLibro* this, int id);
+                 ^~~~~~
+..\Libros.h:26:20: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_setAutor(eLibro* this, char* autor);
+                    ^~~~~~
+..\Libros.h:27:21: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_setTitulo(eLibro* this, char* titulo);
+                     ^~~~~~
+..\Libros.h:28:21: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_setPrecio(eLibro* this, int precio);
+                     ^~~~~~
+..\Libros.h:29:26: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_setEditorialId(eLibro* this, char* editorialId);
+                          ^~~~~~
+..\Libros.h:31:17: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_getId(eLibro* this, int* id);
+                 ^~~~~~
+..\Libros.h:32:20: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_getAutor(eLibro* this, char* autor);
+                    ^~~~~~
+..\Libros.h:33:21: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_getTitulo(eLibro* this, char* titulo);
+                     ^~~~~~
+..\Libros.h:34:21: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_getPrecio(eLibro* this, int* precio);
+                     ^~~~~~
+..\Libros.h:35:26: error: expected declaration specifiers or '...' before 'eLibro'
+ int libro_getEditorialId(eLibro* this, char* editorialId);
+                          ^~~~~~
+..\parser.c:9:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ {
+ ^
+In file included from ..\parser.c:3:0:
+..\LinkedList.h:56:13: error: old-style parameter declarations in prototyped function definition
+ LinkedList* ll_map(LinkedList* this, void (*pFunc)(void* pElement))
+             ^~~~~~
+..\parser.c:43:1: error: expected '{' at end of input
+ }
+ ^
+..\parser.c:43:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+22:09:39 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'libro_IncrementarPrecio':
+..\Controller.c:149:38: warning: passing argument 2 of 'libro_getPrecio' makes pointer from integer without a cast [-Wint-conversion]
+   libro_getPrecio((eLibro*)pElement, precio);
+                                      ^~~~~~
+In file included from ..\Controller.h:3:0,
+                 from ..\Controller.c:4:
+..\Libros.h:34:5: note: expected 'int *' but argument is of type 'int'
+ int libro_getPrecio(eLibro* this, int* precio);
+     ^~~~~~~~~~~~~~~
+..\Controller.c:149:3: warning: 'precio' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   libro_getPrecio((eLibro*)pElement, precio);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Libros.o "..\\Libros.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SP_Labo1.o "..\\SP_Labo1.c" 
+..\SP_Labo1.c: In function 'main':
+..\SP_Labo1.c:83:34: warning: passing argument 2 of 'll_map' from incompatible pointer type [-Wincompatible-pointer-types]
+     listaMap=ll_map(listaLibros, libro_IncrementarPrecio);
+                                  ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\Controller.h:4:0,
+                 from ..\SP_Labo1.c:17:
+..\LinkedList.h:56:13: note: expected 'void (*)(void *)' but argument is of type 'int (*)(void *)'
+ LinkedList* ll_map(LinkedList* this, void (*pFunc)(void* pElement));
+             ^~~~~~
+..\SP_Labo1.c:86:5: warning: implicit declaration of function 'controller_loadFromTextMap' [-Wimplicit-function-declaration]
+     controller_loadFromTextMap("mapeado.csv", listaMap);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linkedlist.o "..\\Linkedlist.c" 
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+22:11:08 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linkedlist.o "..\\Linkedlist.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SP_Labo1.o "..\\SP_Labo1.c" 
+..\SP_Labo1.c: In function 'main':
+..\SP_Labo1.c:83:34: warning: passing argument 2 of 'll_map' from incompatible pointer type [-Wincompatible-pointer-types]
+     listaMap=ll_map(listaLibros, libro_IncrementarPrecio);
+                                  ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\Controller.h:4:0,
+                 from ..\SP_Labo1.c:17:
+..\LinkedList.h:56:13: note: expected 'void (*)(void *)' but argument is of type 'int (*)(void *)'
+ LinkedList* ll_map(LinkedList* this, void (*pFunc)(void* pElement));
+             ^~~~~~
+..\SP_Labo1.c:86:5: warning: implicit declaration of function 'controller_loadFromTextMap' [-Wimplicit-function-declaration]
+     controller_loadFromTextMap("mapeado.csv", listaMap);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+22:13:43 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linkedlist.o "..\\Linkedlist.c" 
+..\Linkedlist.c:545:13: error: conflicting types for 'll_map'
+ LinkedList* ll_map(LinkedList* this, int (*pFunc)(void* pElement))
+             ^~~~~~
+In file included from ..\Linkedlist.c:4:0:
+..\LinkedList.h:56:13: note: previous declaration of 'll_map' was here
+ LinkedList* ll_map(LinkedList* this, void (*pFunc)(void* pElement));
+             ^~~~~~
+22:14:00 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linkedlist.o "..\\Linkedlist.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SP_Labo1.o "..\\SP_Labo1.c" 
+..\SP_Labo1.c: In function 'main':
+..\SP_Labo1.c:86:5: warning: implicit declaration of function 'controller_loadFromTextMap' [-Wimplicit-function-declaration]
+     controller_loadFromTextMap("mapeado.csv", listaMap);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+22:14:29 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SP_Labo1.o "..\\SP_Labo1.c" 
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+Info: Nothing to build for SP_Labo1
+Info: Nothing to build for SP_Labo1
+22:19:08 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file SP_Labo1.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:19:11 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+Info: Nothing to build for SP_Labo1
+22:21:08 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+Info: Nothing to build for SP_Labo1

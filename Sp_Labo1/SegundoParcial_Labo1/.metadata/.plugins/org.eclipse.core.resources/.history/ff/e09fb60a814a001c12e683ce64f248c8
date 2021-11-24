@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
+#include "Libros.h"
+
+int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
+{
+	int retorno=0;
+	int cantidad;
+	char buffer1[1024];
+	char buffer2[1024];
+	char buffer3[1024];
+	char buffer4[1024];
+	eLibro* nuevoLibro;
+
+	if(pFile!=NULL && pArrayListEmployee!=NULL)
+	{
+		fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", buffer1, buffer2, buffer3, buffer4);
+		//printf("\n%s    %s    %s    %s",buffer1, buffer2, buffer3, buffer4); verificar que datos estoy poniendo
+
+		while(!feof(pFile))//hasta q no lea la ultima linea, no sale del while
+		{
+			cantidad= fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", buffer1, buffer2, buffer3, buffer4);
+			if(cantidad<4)
+			{
+				break;
+			}
+			nuevoLibro=libro_newParametrosString(buffer1, buffer2, buffer3, buffer4);
+			ll_add(pArrayListEmployee, nuevoLibro);
+			retorno=1;
+		}
+	}
+	return retorno;
+}
+

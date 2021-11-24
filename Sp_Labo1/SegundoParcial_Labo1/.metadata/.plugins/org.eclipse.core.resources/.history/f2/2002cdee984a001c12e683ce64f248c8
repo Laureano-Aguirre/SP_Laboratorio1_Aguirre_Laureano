@@ -1,0 +1,8 @@
+int controller_loadFromText(char* path , LinkedList* pArrayListLibro);
+int controller_ListLibro(LinkedList* pArrayListLibro);
+int controller_sortLibro(LinkedList* pArrayListLibro);
+void mostrarLibro(eLibro* pArrayListLibro, int index);
+int OrdenamientoPorAutor(void* libroA, void* libroB);
+int OrdenamientoPorTitulo(void* libroA, void* libroB); //ok
+int OrdenamientoPorEditorialId(void* libroA, void* libroB);	//ok
+int OrdenamientoPorPrecio(void* libroA, void* libroB);

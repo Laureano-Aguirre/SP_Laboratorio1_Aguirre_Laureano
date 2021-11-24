@@ -1,0 +1,7 @@
+int controller_loadFromText(char* path , eLibro* pArrayListLibro);
+int controller_ListLibro(eLibro* pArrayListLibro);
+int controller_sortLibro(eLibro* pArrayListLibro);
+void mostrarLibro(eLibro* pArrayListLibro, int index);
+int OrdenamientoPorNombre(void* libroA, void* libroB); //ok
+int OrdenamientoPorHsTrabajadas(void* libroA, void* libroB); //ok
+int OrdenamientoPorSueldo(void* libroA, void* libroB);	//ok

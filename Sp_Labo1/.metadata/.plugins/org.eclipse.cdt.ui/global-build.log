@@ -1,0 +1,44 @@
+Info: Nothing to build for SP_Labo1
+Info: Nothing to build for SP_Labo1
+00:40:12 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SP_Labo1.o "..\\SP_Labo1.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+..\parser.c: In function 'parser_LibroFromTextMap':
+..\parser.c:63:20: warning: format '%s' expects argument of type 'char *', but argument 3 has type 'int' [-Wformat=]
+    fprintf(pFile,"%s,%d,%s,%d,%s\n", id, titulo, autor, precio, editorial);//escribimos el archivo y lo guardamos
+                    ^
+..\parser.c:63:23: warning: format '%d' expects argument of type 'int', but argument 4 has type 'char *' [-Wformat=]
+    fprintf(pFile,"%s,%d,%s,%d,%s\n", id, titulo, autor, precio, editorial);//escribimos el archivo y lo guardamos
+                       ^
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+00:40:32 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+00:40:56 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linkedlist.o "..\\Linkedlist.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SP_Labo1.o "..\\SP_Labo1.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+11:12:13 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linkedlist.o "..\\Linkedlist.c" 
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+11:54:55 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Linkedlist.o "..\\Linkedlist.c" 
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+Info: Nothing to build for SP_Labo1
+12:01:47 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file SP_Labo1.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+12:01:50 **** Incremental Build of configuration Debug for project SP_Labo1 ****
+Info: Internal Builder is used for build
+gcc -o SP_Labo1.exe Aguirre.o Controller.o Libros.o Linkedlist.o SP_Labo1.o parser.o 

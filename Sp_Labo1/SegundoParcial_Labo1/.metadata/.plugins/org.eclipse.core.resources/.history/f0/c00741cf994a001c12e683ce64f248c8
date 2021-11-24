@@ -1,0 +1,183 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "Aguirre.h"
+#include "parser.h"
+#include "Libros.h"
+#include "Controller.h"
+#include "LinkedList.h"
+
+int controller_loadFromText(char* path , LinkedList* pArrayListLibro)
+{
+	int retorno=0;
+	FILE *auxP;
+
+	auxP=fopen(path ,"r");
+	perror(path);
+	if(auxP!=NULL)
+	{
+		if(parser_LibroFromText(auxP, pArrayListLibro)==1)
+		{
+			retorno=1;
+			puts("\nDatos cargados correctamente.");
+		}
+	}
+	else
+	{
+		puts("\nError, no se puede leer el archivo.");
+	}
+	fclose(auxP);
+    return retorno;
+}
+
+int controller_ListLibro(LinkedList* pArrayListLibro)
+{
+	int i;
+	int retorno=-1;
+
+	if(pArrayListLibro!=NULL)
+	{
+		if(ll_len(pArrayListLibro)>0)
+		{
+			for(i=0;i<ll_len(pArrayListLibro);i++)
+			{
+				mostrarLibro(pArrayListLibro, i);
+				retorno=1;
+			}
+		}
+		else
+		{
+			puts("\nNo hay libros disponibles para listar.");
+		}
+
+	}
+    return retorno;
+}
+
+int controller_sortLibro(LinkedList* pArrayListLibro)
+{
+	int retorno=-1;
+	int opcion;
+
+	if(pArrayListLibro!=NULL)
+	{
+		if(ll_len(pArrayListLibro)>0)
+		{
+			getInt("\nIngrese que desea ordenar (1.autor 2.titulo 3.precio 4.ID editorial): ", &opcion);
+			while(opcion!=1 && opcion !=2 && opcion!=3 && opcion!=4)
+			{
+				getInt("\nIngrese que desea ordenar (1.autor 2.titulo 3.precio 4.ID editorial): ", &opcion);
+			}
+			switch(opcion)
+			{
+				case 1:
+					if(ll_sort(pArrayListLibro, OrdenamientoPorAutor, 1)==0)	//le paso a la funcion sort, encargada de hacer el swapeo, la lista, la funcion retornando
+					{
+						retorno=1;
+					}
+					break;													//el valor de la comparacion, y el tipo de ordenamiento (1 descendente)
+				case 2:
+					if(ll_sort(pArrayListLibro, OrdenamientoPorTitulo, 1)==0)
+					{
+						retorno=1;
+					}
+					break;
+				case 3:
+					if(ll_sort(pArrayListLibro, OrdenamientoPorPrecio, 1)==0)
+					{
+						retorno=1;
+					}
+					break;
+				case 4:
+					if(ll_sort(pArrayListLibro, OrdenamientoPorEditorialId, 1==0))
+					{
+						retorno=1;
+					}
+			}
+		}
+		else
+		{
+			puts("\nNo hay empleados disponibles para ordenar.");
+		}
+	}
+	else
+	{
+		puts("\nError, no hay nada cargado en la lista.");
+	}
+    return retorno;
+}
+
+void mostrarLibro(LinkedList* pArrayListLibro, int index)
+{
+	eLibro* libro;
+	int id;
+	int precio;
+	int editorialId;
+	char autor[50];
+	char titulo[50];
+
+	libro=(eLibro*)ll_get(pArrayListLibro, index);
+	libro_getId(libro, &id);
+	libro_getPrecio(libro, &precio);
+	libro_getAutor(libro, autor);
+	libro_getTitulo(libro, titulo);
+	libro_getEditorialId(libro, &editorialId);
+
+	printf("\nID: %d  ----  nombre: %s  ----  titulo: %s  ---- sueldo: %d  ----  horas trabajadas: %d", id, autor, titulo, precio, editorialId);
+
+}
+
+int OrdenamientoPorAutor(void* libroA, void* libroB)
+{
+	int retorno=0;
+
+	retorno=strcmp(((eLibro*)libroA)->autor, ((eLibro*)libroB)->autor);		//declaro y casteo las variables de tipo libro, luego las comparo
+
+	return retorno;
+}
+
+int OrdenamientoPorTitulo(void* libroA, void* libroB)
+{
+	int retorno=0;
+
+	retorno=strcmp(((eLibro*)libroA)->titulo, ((eLibro*)libroB)->titulo);		//declaro y casteo las variables de tipo libro, luego las comparo
+
+	return retorno;
+}
+int OrdenamientoPorEditorialId(void* libroA, void* libroB)
+{
+	int retorno=0;
+
+	if(((eLibro*)libroA)->editorialId > ((eLibro*)libroB)->editorialId) //compara si el libro A es mayor el id de editorial que el libro B
+	{
+		retorno=1;
+	}
+	else if(((eLibro*)libroA)->editorialId < ((eLibro*)libroB)->editorialId)	///compara si el libro B es mayor el id de editorial que el libro A
+	{
+		retorno=-1;
+	}
+	else
+	{
+		retorno=0;		//ambos libros tienen el mismo id de editorial
+	}
+	return retorno;
+}
+
+int OrdenamientoPorPrecio(void* libroA, void* libroB)
+{
+	int retorno=0;
+
+	if(((eLibro*)libroA)->precio > ((eLibro*)libroB)->precio)		//compara el precio del libro A con el precio del libro B, si gana mas, retorna 1
+	{
+		retorno=1;
+	}
+	else if(((eLibro*)libroB)->precio < ((eLibro*)libroB)->precio)		//compara el precio del libro B con el precio del libro A, si gana mas, retorna -1
+	{
+		retorno=-1;
+	}
+	else
+	{
+		retorno=0;		//retorna 0 en caso de sea el mismo precio
+	}
+	return retorno;
+}
